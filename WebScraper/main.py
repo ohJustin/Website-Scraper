@@ -1,16 +1,14 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Reddit Website Scraper ....
+# *e.g link* https://www.reddit.com/r/funny/comments/16brnzb/self_aware/
+from bs4 import BeautifulSoup
+import requests
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+page_to_scrape = requests.get("https://www.reddit.com/r/funny/comments/16brnzb/self_aware/")
+soup = BeautifulSoup(page_to_scrape.text, "html.parser")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+#Search for <> tags ?
+#comments = ?
+
+#Search for ...

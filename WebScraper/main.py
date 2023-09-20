@@ -1,14 +1,16 @@
 # Reddit Website Scraper ....
 # *e.g link* https://www.reddit.com/r/funny/comments/16brnzb/self_aware/
-from bs4 import BeautifulSoup
+import sys
 import requests
 
 
-page_to_scrape = requests.get("https://www.reddit.com/r/funny/comments/16brnzb/self_aware/")
-soup = BeautifulSoup(page_to_scrape.text, "html.parser")
+URL = sys.argv[1]
+
+file = open("content.txt", "w")
+page_to_scrape = requests.get(URL)
 
 
-#Search for <> tags ?
-#comments = ?
+file.write(page_to_scrape.text)
 
-#Search for ...
+file.close()
+print("Scraper Ran ...")
